@@ -19,6 +19,8 @@ const theme = createMuiTheme({
     MuiCardMedia: {
       root: {
         minHeight: "475px",
+        marginTop: "14px",
+        marginBottom: "14px",
       },
     },
 
@@ -44,10 +46,6 @@ const useStyles = makeStyles((theme) => ({
   page: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
-
-    "& p": {
-      margin: `${theme.spacing(3)}px 0`,
-    },
   },
 }))
 

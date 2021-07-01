@@ -9,93 +9,102 @@ import Button from "@material-ui/core/Button"
 import Paper from "@material-ui/core/Paper"
 import Box from "@material-ui/core/Box"
 
-import useStyles from "../styles/styles"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
+import { useTheme } from "@material-ui/core/styles"
 
 const Index = () => {
-   return (
-      <>
-         <Layout title="Home">
-            <Box p={3}>
-               <Welcome />
-            </Box>
+  return (
+    <>
+      <Layout title="Home">
+        <Box p={3}>
+          <Welcome />
+        </Box>
 
-            <Paper>
-               <Box p={3}>
-                  <SecondComponent />
-               </Box>
-            </Paper>
-         </Layout>
-      </>
-   )
+        <Paper>
+          <Box p={3}>
+            <SecondComponent />
+          </Box>
+        </Paper>
+      </Layout>
+    </>
+  )
 }
 
+// ** --- COMPONENT
 const SecondComponent = () => {
-   const classes = useStyles()
+  const theme = useTheme()
 
-   return (
-      <>
-         <Typography variant="h3" paragraph className={classes.headFont}>
-            Lorem ipsum
-         </Typography>
+  const sm = useMediaQuery(theme.breakpoints.up("sm"))
+  const md = useMediaQuery(theme.breakpoints.up("md"))
+  const mq = md ? "h2" : sm ? "h4" : "h5"
 
-         <Typography variant="body1" paragraph>
-            Adit suo ait in olorinis portitor undam tangentia quibus Hectora
-            invideatis cardine pressit fovet, fuit; nec barba sudantibus? Forte
-            aliquis, ultaque et is inritamen velamina Clarium: non. Inter
-            pendentia eligit, sua fugam cumque. Domat ex nomina rogantum genitas
-            delapsam: iam quae capillos facienda lanificae tectus solidorum.
-            Seraque Medea, et exstinctique et conata Cumarum species ultra re
-            cognita!
-         </Typography>
+  return (
+    <>
+      <Typography variant={mq} paragraph>
+        Lorem ipsum
+      </Typography>
 
-         <Typography variant="h3" paragraph className={classes.headFont}>
-            Mauris rhoncus aenean vel elit
-         </Typography>
+      <Typography variant="body1" paragraph>
+        Adit suo ait in olorinis portitor undam tangentia quibus Hectora
+        invideatis cardine pressit fovet, fuit; nec barba sudantibus? Forte
+        aliquis, ultaque et is inritamen velamina Clarium: non. Inter pendentia
+        eligit, sua fugam cumque. Domat ex nomina rogantum genitas delapsam: iam
+        quae capillos facienda lanificae tectus solidorum. Seraque Medea, et
+        exstinctique et conata Cumarum species ultra re cognita!
+      </Typography>
 
-         <Typography variant="body1">
-            Mauris rhoncus aenean vel elit. Pharetra et ultrices neque ornare
-            aenean euismod elementum. Dignissim enim sit amet venenatis urna
-            cursus eget nunc scelerisque. Malesuada nunc vel risus commodo
-            viverra maecenas accumsan. Pellentesque massa placerat duis
-            ultricies lacus sed turpis tincidunt id. Venenatis a condimentum
-            vitae sapien pellentesque. Maecenas accumsan lacus vel facilisis
-            volutpat.
-         </Typography>
-      </>
-   )
+      <Typography variant={mq} paragraph>
+        Mauris rhoncus aenean vel elit
+      </Typography>
+
+      <Typography variant="body1">
+        Mauris rhoncus aenean vel elit. Pharetra et ultrices neque ornare aenean
+        euismod elementum. Dignissim enim sit amet venenatis urna cursus eget
+        nunc scelerisque. Malesuada nunc vel risus commodo viverra maecenas
+        accumsan. Pellentesque massa placerat duis ultricies lacus sed turpis
+        tincidunt id. Venenatis a condimentum vitae sapien pellentesque.
+        Maecenas accumsan lacus vel facilisis volutpat.
+      </Typography>
+    </>
+  )
 }
 
+// ** --- COMPONENT
 const Welcome = () => {
-   const classes = useStyles()
+  const theme = useTheme()
 
-   return (
-      <>
-         <Typography variant="h3" paragraph className={classes.headFont}>
-            Bembem Cabrera
-         </Typography>
+  const sm = useMediaQuery(theme.breakpoints.up("sm"))
+  const md = useMediaQuery(theme.breakpoints.up("md"))
+  const mq = md ? "h2" : sm ? "h4" : "h5"
 
-         <Typography variant="body1" paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-         </Typography>
+  return (
+    <>
+      <Typography variant={mq} paragraph>
+        Bembem Cabrera
+      </Typography>
 
-         <Grid container spacing={3}>
-            <Grid item>
-               <Link to="/blog">
-                  <Button variant="contained" color="primary">
-                     Read the blog &#8594;
-                  </Button>
-               </Link>
-            </Grid>
+      <Typography variant="body1" paragraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </Typography>
 
-            <Grid item>
-               <Link to="/contact">
-                  <Button variant="outlined">Contact me</Button>
-               </Link>
-            </Grid>
-         </Grid>
-      </>
-   )
+      <Grid container spacing={3}>
+        <Grid item>
+          <Link to="/blog">
+            <Button variant="contained" color="primary">
+              Read the blog &#8594;
+            </Button>
+          </Link>
+        </Grid>
+
+        <Grid item>
+          <Link to="/contact">
+            <Button variant="outlined">Contact me</Button>
+          </Link>
+        </Grid>
+      </Grid>
+    </>
+  )
 }
 
 export default Index
