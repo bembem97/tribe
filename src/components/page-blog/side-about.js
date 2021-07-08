@@ -32,7 +32,7 @@ const AboutMe = () => {
         <Grid container>
           <Grid item xs={mq ? 4 : 12}>
             <StaticImage
-              src="../images/avatar.png"
+              src="../../images/avatar.png"
               alt="My avatar"
               className={classes.centerBox}
             />
