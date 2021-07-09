@@ -50,7 +50,6 @@ const theme = createMuiTheme({
       },
     },
   },
-
   palette: {
     primary: {
       main: green[700],

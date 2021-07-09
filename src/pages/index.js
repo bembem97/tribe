@@ -36,7 +36,7 @@ const SecondComponent = () => {
 
   const sm = useMediaQuery(theme.breakpoints.up("sm"))
   const md = useMediaQuery(theme.breakpoints.up("md"))
-  const mq = md ? "h2" : sm ? "h4" : "h5"
+  const mq = md ? "h3" : sm ? "h4" : "h5"
 
   return (
     <>
@@ -75,7 +75,7 @@ const Welcome = () => {
 
   const sm = useMediaQuery(theme.breakpoints.up("sm"))
   const md = useMediaQuery(theme.breakpoints.up("md"))
-  const mq = md ? "h2" : sm ? "h4" : "h5"
+  const mq = md ? "h3" : sm ? "h4" : "h5"
 
   return (
     <>

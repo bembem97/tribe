@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
 import List from "@material-ui/core/List"
@@ -42,9 +42,16 @@ const SidePost = () => {
         edges {
           node {
             id
-            slug
             frontmatter {
               title
+              embeddedImagesLocal {
+                childImageSharp {
+                  gatsbyImageData(width: 50, height: 50)
+                }
+              }
+            }
+            fields {
+              slug
             }
           }
         }
@@ -53,23 +60,27 @@ const SidePost = () => {
   `)
 
   // ? --- QUERY
-  const _data = data.allMdx.edges.map(({ node }) => (
-    <Fragment key={node.id}>
-      <Divider />
+  const _data = data.allMdx.edges.map(({ node }) => {
+    const _image = getImage(node.frontmatter.embeddedImagesLocal[0])
+    console.log("Locals", _image)
 
-      <Link to={`/blogs/${node.slug}`}>
-        <ListItem button>
-          <StaticImage
-            src={pagkaun}
-            alt="Pagkaun"
-            width={70}
-            className="static-image"
-          />
-          <ListItemText primary={node.frontmatter.title} />
-        </ListItem>
-      </Link>
-    </Fragment>
-  ))
+    return (
+      <Fragment key={node.id}>
+        <Divider />
+
+        <Link to={node.fields.slug}>
+          <ListItem button>
+            <GatsbyImage
+              image={_image}
+              alt="Pagkaun"
+              className="static-image"
+            />
+            <ListItemText primary={node.frontmatter.title} />
+          </ListItem>
+        </Link>
+      </Fragment>
+    )
+  })
 
   const classes = useStyles()
   return (

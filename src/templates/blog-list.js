@@ -63,7 +63,7 @@ const BlogList = ({ data, pageContext }) => {
 
           <Link to={`${post.fields.slug}`}>
             <CardMedia
-              image={sudan2}
+              image={post.frontmatter.embeddedImagesLocal[0].publicURL}
               className={classes.media}
               title={post.frontmatter.title}
             />
@@ -127,7 +127,7 @@ const BlogList = ({ data, pageContext }) => {
             <SidePost />
           </Grid>
 
-          <Grid item xs={8}>
+          <Grid item xs={mq ? 12 : 8}>
             <Box display="flex" justifyContent="space-between">
               <Button variant="outlined" disabled={isFirst ? true : false}>
                 {!isFirst && <Link to={previous}>Previous</Link>}
@@ -147,7 +147,7 @@ const BlogList = ({ data, pageContext }) => {
 export const blogListQuery = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
     allMdx(
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: { fields: frontmatter___date, order: ASC }
       limit: $limit
       skip: $skip
     ) {
@@ -158,6 +158,12 @@ export const blogListQuery = graphql`
           frontmatter {
             title
             date(formatString: "Do MMM YYYY")
+            embeddedImagesLocal {
+              publicURL
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
           fields {
             slug
