@@ -4,7 +4,6 @@ import { StaticImage } from "gatsby-plugin-image"
 import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
-import sudan2 from "../images/sud-an-2.jpg"
 
 import useStyles from "../styles/styles"
 import SidePost from "../components/page-blog/side-post"

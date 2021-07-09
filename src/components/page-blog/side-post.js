@@ -31,7 +31,6 @@ const useStyles = makeStyles({
 })
 
 const SidePost = () => {
-  const pagkaun = "../../images/sud-an-3.jpg"
   const data = useStaticQuery(graphql`
     query {
       allMdx(
@@ -62,7 +61,6 @@ const SidePost = () => {
   // ? --- QUERY
   const _data = data.allMdx.edges.map(({ node }) => {
     const _image = getImage(node.frontmatter.embeddedImagesLocal[0])
-    console.log("Locals", _image)
 
     return (
       <Fragment key={node.id}>

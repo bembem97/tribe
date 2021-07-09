@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 
 import Typography from "@material-ui/core/Typography"
@@ -10,7 +10,13 @@ import Paper from "@material-ui/core/Paper"
 import Box from "@material-ui/core/Box"
 
 import useMediaQuery from "@material-ui/core/useMediaQuery"
-import { useTheme } from "@material-ui/core/styles"
+import { useTheme, makeStyles } from "@material-ui/core/styles"
+
+const useStyles = makeStyles({
+  root: {
+    marginBottom: "3rem",
+  },
+})
 
 const Index = () => {
   return (
@@ -24,8 +30,160 @@ const Index = () => {
           <Box p={3}>
             <SecondComponent />
           </Box>
+
+          <Box p={3}>
+            <ThirdComponent />
+          </Box>
         </Paper>
       </Layout>
+    </>
+  )
+}
+
+// ** --- COMPONENT
+const ThirdComponent = () => {
+  const theme = useTheme()
+  const md = useMediaQuery(theme.breakpoints.up("768"))
+  const xs = useMediaQuery(theme.breakpoints.down("768"))
+  const mq = md ? "6" : "12"
+  const classes = useStyles()
+
+  return (
+    <>
+      {/** // TODO --- ABCDEFGHIJKLMNOPQRSTUVWXYZ */}
+      <Grid container spacing={3} className={classes.root}>
+        <Box clone order={xs ? 2 : 0}>
+          <Grid item xs={mq}>
+            <StaticImage alt="pinoy food" src="../images/chopsuey.jpg" />
+          </Grid>
+        </Box>
+
+        <Box clone>
+          <Grid item xs={mq}>
+            <Typography variant="h4" component="h4" align="center">
+              Title
+            </Typography>
+
+            <Box
+              display="flex"
+              flexDirection="row"
+              justifyContent="center"
+              mb={3}
+              mt={2}
+            >
+              <Typography variant="body2" component="h6">
+                June 9, 2021&nbsp;/&nbsp;by Alicia
+              </Typography>
+            </Box>
+
+            <Typography variant="body1" align="center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              tristique justo id elit bibendum pharetra non vitae lectus. Mauris
+              libero felis, dapibus a ultrices sed, commodo vitae odio. Sed
+              auctor tellus quis arcu tempus, egestas tincidunt augue
+              pellentesque. Suspendisse vestibulum sem in eros maximus, pretium
+              commodo turpis convallis. Aenean scelerisque orci quis urna
+              tempus, vitae interdum velit aliquet.
+            </Typography>
+
+            <Box display="flex" justifyContent="center" mt={3}>
+              <Button variant="contained" color="primary">
+                Read More
+              </Button>
+            </Box>
+          </Grid>
+        </Box>
+      </Grid>
+
+      {/** // TODO --- ABCDEFGHIJKLMNOPQRSTUVWXYZ */}
+      <Grid container spacing={3} className={classes.root}>
+        <Box clone order={2}>
+          <Grid item xs={mq}>
+            <StaticImage alt="pinoy food" src="../images/vege.jpg" />
+          </Grid>
+        </Box>
+
+        <Box clone order={1}>
+          <Grid item xs={mq}>
+            <Typography variant="h4" component="h4" align="center">
+              Title
+            </Typography>
+
+            <Box
+              display="flex"
+              flexDirection="row"
+              justifyContent="center"
+              mb={3}
+              mt={2}
+            >
+              <Typography variant="body2" component="h6">
+                June 9, 2021&nbsp;/&nbsp;by Juliana
+              </Typography>
+            </Box>
+
+            <Typography variant="body1" align="center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              tristique justo id elit bibendum pharetra non vitae lectus. Mauris
+              libero felis, dapibus a ultrices sed, commodo vitae odio. Sed
+              auctor tellus quis arcu tempus, egestas tincidunt augue
+              pellentesque. Suspendisse vestibulum sem in eros maximus, pretium
+              commodo turpis convallis. Aenean scelerisque orci quis urna
+              tempus, vitae interdum velit aliquet.
+            </Typography>
+
+            <Box display="flex" justifyContent="center" mt={3}>
+              <Button variant="contained" color="primary">
+                Read More
+              </Button>
+            </Box>
+          </Grid>
+        </Box>
+      </Grid>
+
+      {/** // TODO --- ABCDEFGHIJKLMNOPQRSTUVWXYZ */}
+      <Grid container spacing={3}>
+        <Box clone order={xs ? 2 : 0}>
+          <Grid item xs={mq}>
+            <StaticImage alt="pinoy food" src="../images/cuisine.jpg" />
+          </Grid>
+        </Box>
+
+        <Box clone>
+          <Grid item xs={mq}>
+            <Typography variant="h4" component="h4" align="center">
+              Title
+            </Typography>
+
+            <Box
+              display="flex"
+              flexDirection="row"
+              justifyContent="center"
+              mb={3}
+              mt={2}
+            >
+              <Typography variant="body2" component="h6">
+                June 9, 2021&nbsp;/&nbsp;by Alexa
+              </Typography>
+            </Box>
+
+            <Typography variant="body1" align="center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              tristique justo id elit bibendum pharetra non vitae lectus. Mauris
+              libero felis, dapibus a ultrices sed, commodo vitae odio. Sed
+              auctor tellus quis arcu tempus, egestas tincidunt augue
+              pellentesque. Suspendisse vestibulum sem in eros maximus, pretium
+              commodo turpis convallis. Aenean scelerisque orci quis urna
+              tempus, vitae interdum velit aliquet.
+            </Typography>
+
+            <Box display="flex" justifyContent="center" mt={3}>
+              <Button variant="contained" color="primary">
+                Read More
+              </Button>
+            </Box>
+          </Grid>
+        </Box>
+      </Grid>
     </>
   )
 }
