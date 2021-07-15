@@ -30,13 +30,13 @@ const useStyles = makeStyles((theme) => ({
 
 const shortcodes = { GatsbyImage, Button } // Provide common components here
 
-const Articles = ({ data: { mdx }, pageContext }) => {
+const Article = ({ data: { mdx }, pageContext }) => {
   const { next, previous } = pageContext
   const classes = useStyles()
   const _image = getImage(mdx.frontmatter.embeddedImagesLocal[0])
 
   return (
-    <Layout>
+    <Layout title={mdx.frontmatter.title}>
       <Typography variant="h4" component="h1" paragraph align="center">
         {mdx.frontmatter.title}
       </Typography>
@@ -100,4 +100,4 @@ export const articleQuery = graphql`
     }
   }
 `
-export default Articles
+export default Article

@@ -60,6 +60,7 @@ const theme = createMuiTheme({
   },
 })
 
+// todo ** Main Component
 const Layout = ({ children, title }) => {
   const classes = useStyles()
   const data = useStaticQuery(graphql`
