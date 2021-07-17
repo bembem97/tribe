@@ -52,7 +52,7 @@ const ThirdComponent = () => {
     <>
       {/** // TODO --- ABCDEFGHIJKLMNOPQRSTUVWXYZ */}
       <Grid container spacing={3} className={classes.root}>
-        <Box clone order={xs ? 2 : 0}>
+        <Box clone order={xs ? 0 : 2}>
           <Grid item xs={mq}>
             <StaticImage alt="pinoy food" src="../images/chopsuey.jpg" />
           </Grid>
@@ -97,13 +97,13 @@ const ThirdComponent = () => {
 
       {/** // TODO --- ABCDEFGHIJKLMNOPQRSTUVWXYZ */}
       <Grid container spacing={3} className={classes.root}>
-        <Box clone order={2}>
+        <Box clone order={1}>
           <Grid item xs={mq}>
             <StaticImage alt="pinoy food" src="../images/vege.jpg" />
           </Grid>
         </Box>
 
-        <Box clone order={1}>
+        <Box clone order={2}>
           <Grid item xs={mq}>
             <Typography variant="h4" component="h4" align="center">
               Title
@@ -142,7 +142,7 @@ const ThirdComponent = () => {
 
       {/** // TODO --- ABCDEFGHIJKLMNOPQRSTUVWXYZ */}
       <Grid container spacing={3}>
-        <Box clone order={xs ? 2 : 0}>
+        <Box clone order={xs ? 0 : 2}>
           <Grid item xs={mq}>
             <StaticImage alt="pinoy food" src="../images/cuisine.jpg" />
           </Grid>

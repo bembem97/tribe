@@ -20,6 +20,10 @@ import Box from "@material-ui/core/Box"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
+import CardActions from "@material-ui/core/CardActions"
+import FavoriteIcon from "@material-ui/icons/Favorite"
+import ShareIcon from "@material-ui/icons/Share"
+import IconButton from "@material-ui/core/IconButton"
 
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles"
 import { green } from "@material-ui/core/colors"
@@ -73,6 +77,16 @@ const BlogList = ({ data, pageContext }) => {
               </Typography>
             </CardContent>
           </Link>
+
+          <CardActions>
+            <IconButton title="Favorite">
+              <FavoriteIcon />
+            </IconButton>
+
+            <IconButton title="Share">
+              <ShareIcon />
+            </IconButton>
+          </CardActions>
         </Card>
       </Box>
     </React.Fragment>
