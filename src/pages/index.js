@@ -61,7 +61,7 @@ const ThirdComponent = () => {
         <Box clone>
           <Grid item xs={mq}>
             <Typography variant="h4" component="h4" align="center">
-              Title
+              Utan Bisaya
             </Typography>
 
             <Box
@@ -72,7 +72,7 @@ const ThirdComponent = () => {
               mt={2}
             >
               <Typography variant="body2" component="h6">
-                June 9, 2021&nbsp;/&nbsp;by Alicia
+                June 9, 2021&nbsp;/&nbsp;by Isabella
               </Typography>
             </Box>
 
@@ -87,9 +87,11 @@ const ThirdComponent = () => {
             </Typography>
 
             <Box display="flex" justifyContent="center" mt={3}>
-              <Button variant="contained" color="primary">
-                Read More
-              </Button>
+              <Link to="/blog-3/utan-bisaya/">
+                <Button variant="contained" color="primary">
+                  Read More
+                </Button>
+              </Link>
             </Box>
           </Grid>
         </Box>
@@ -106,7 +108,7 @@ const ThirdComponent = () => {
         <Box clone order={2}>
           <Grid item xs={mq}>
             <Typography variant="h4" component="h4" align="center">
-              Title
+              Utan Sari-sari
             </Typography>
 
             <Box
@@ -117,7 +119,7 @@ const ThirdComponent = () => {
               mt={2}
             >
               <Typography variant="body2" component="h6">
-                June 9, 2021&nbsp;/&nbsp;by Juliana
+                June 9, 2021&nbsp;/&nbsp;by Patricia
               </Typography>
             </Box>
 
@@ -132,9 +134,11 @@ const ThirdComponent = () => {
             </Typography>
 
             <Box display="flex" justifyContent="center" mt={3}>
-              <Button variant="contained" color="primary">
-                Read More
-              </Button>
+              <Link to="/blog-4/utan-sarisari/">
+                <Button variant="contained" color="primary">
+                  Read More
+                </Button>
+              </Link>
             </Box>
           </Grid>
         </Box>
@@ -151,7 +155,7 @@ const ThirdComponent = () => {
         <Box clone>
           <Grid item xs={mq}>
             <Typography variant="h4" component="h4" align="center">
-              Title
+              Isda Tinola
             </Typography>
 
             <Box
@@ -162,7 +166,7 @@ const ThirdComponent = () => {
               mt={2}
             >
               <Typography variant="body2" component="h6">
-                June 9, 2021&nbsp;/&nbsp;by Alexa
+                June 9, 2021&nbsp;/&nbsp;by Maria
               </Typography>
             </Box>
 
@@ -177,9 +181,11 @@ const ThirdComponent = () => {
             </Typography>
 
             <Box display="flex" justifyContent="center" mt={3}>
-              <Button variant="contained" color="primary">
-                Read More
-              </Button>
+              <Link to="/blog-5/isda-tinola/">
+                <Button variant="contained" color="primary">
+                  Read More
+                </Button>
+              </Link>
             </Box>
           </Grid>
         </Box>
